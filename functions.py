@@ -184,7 +184,7 @@ def werewolf(players, deck, player):
 def seer(players, player_id):
     for n in players:
         if n.get_name() == player_id:
-            return f'{player_id}\'s card is {players[n].get_name()}. Type -next to continue.'
+            return f'{player_id}\'s card is {players[n]}. Type -next to continue.'
     return "error"
 
 
