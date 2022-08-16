@@ -7,6 +7,7 @@ The game One Night Werewolf is a hidden role game similar to Mafia. In each roun
 My friends loved playing this game in person in our first year of university, but this was obviously complicated by COVID-19 when we could no longer meet in person. To make up for this, I decided to program a bot that would allow us to play a version of the game using the group chat app Discord. It would used text-based commands to randomly assign a role to each player by privately messaging them, giving them clear instructions on how to perform their “role” in a virtual setting. While players discussed who they thought was the werewolf in a voice chat, they would then be able to vote by message in the server, and once every player had voted the bot would announce the winners.
 
 ![Screenshot (391)](https://user-images.githubusercontent.com/22796402/184992836-cae4e6e3-1de2-4d2e-b854-09fa62a2983f.png)
+>This is what the main Discord server looks like when players are voting.
 
 Rules and roles are further explained in the code, both when you send the command "-instructions" and when you receive your role directly, so no prior knowledge of One Night Werewolf is required to play using the bot--all you need is an IDE like Pycharm and your own Discord API token, which you can put in a file call "save.txt" to run the bot as is.
 
@@ -19,6 +20,7 @@ I created objects for both players and cards, mainly so I could override compari
 Each role  has an associated method that allows players to complete their night action in functions.py. Most of the time, this will involve looking at or swapping a specific player's card. The nicknames were useful because a player could actually get a list of all players in the game by nickname (using -listnames) before running their own command to target another player from the list (for example, a Robber would type -rob [nickname]). 
 
 ![Screenshot (390)](https://user-images.githubusercontent.com/22796402/184992897-752b16d7-a613-4a2d-b9f4-5af940da4ec0.png)
+>This is what private messages with the bot look like.
 
 ## Next Steps
-Due to its use of global variables to store players, this bot effectively only works for one server at a time (not a problem for my friends and I, but would have to be modified if this were to be released publicly; maybe by using a database). The bot also ends up producing a lot of command messages in the server [image], which can be inconvenient. My friends got around this by creating a channel entirely dedicated to playing the game.
+Due to its use of global variables to store players, this bot effectively only works for one server at a time (not a problem for my friends and I, but would have to be modified if this were to be released publicly; maybe by using a database). The bot also ends up producing a lot of messages in the server, as shown in the above images, which can be inconvenient. My friends got around this by creating a channel entirely dedicated to playing the game.
